@@ -1,18 +1,27 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
+import { createRoot } from "react-dom/client";
+import { App } from "./App";
+import {
+  AppContextProvider,
+  BudgetContextProvider,
+  CurrencyContextProvider,
+  ExpensesContextProvider,
+} from "./context";
+import { Global } from "./UI/GlobalStyles";
 
+const providers = [
+  BudgetContextProvider,
+  CurrencyContextProvider,
+  ExpensesContextProvider,
+  ExpensesContextProvider,
+];
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
+const root = createRoot(document.getElementById("root") as HTMLElement);
+
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <>
+    <Global />{" "}
+    <AppContextProvider components={providers}>
+      <App />
+    </AppContextProvider>
+  </>,
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-

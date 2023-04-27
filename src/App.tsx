@@ -1,14 +1,12 @@
-import React from 'react';
-import { Form } from './components/Form/Form';
+import { BudgetApp, Expenses, Form } from "./components";
+import { AppWrapper } from "./UI/styles";
 
-function App() {
-  
+export const App = () => {
   return (
-  <div >
+    <AppWrapper>
+      <BudgetApp />
+      <Expenses />
       <Form />
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga, sint. Aliquam, assumenda. Impedit eveniet consequatur tempore temporibus ab, reiciendis autem ipsam error voluptatibus ea minima consequuntur, aperiam quae, mollitia tempora.
-    </div>
+    </AppWrapper>
   );
-}
-
-export default App;
+};
